@@ -61,5 +61,12 @@ namespace Test
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form8 form8 = new Form8();
+            form8.Show();
+            this.Hide();
+        }
     }
 }

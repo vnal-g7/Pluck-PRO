@@ -30,8 +30,8 @@ namespace Test
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form4 form4 = new Form4();
-            form4.Show();
+            Form9 form9 = new Form9();
+            form9.Show();
             this.Hide();
         }
 
@@ -65,17 +65,17 @@ namespace Test
         }
         private void LoadWorkers()
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\vnala\source\repos\Test\Test\Database1.mdf;Integrated Security=True";
+           // string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\vnala\source\repos\Test\Test\Database1.mdf;Integrated Security=True";
 
-            using (SqlConnection con = new SqlConnection(connectionString))
+           // using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string query = "SELECT * FROM Worker"; // choose your table
+               // string query = "SELECT * FROM Worker"; // choose your table
 
-                SqlDataAdapter da = new SqlDataAdapter(query, con);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+                //SqlDataAdapter da = new SqlDataAdapter(query, con);
+                //DataTable dt = new DataTable();
+                //da.Fill(dt);
 
-                dataGridView1.DataSource = dt; // show data in grid
+                //.DataSource = dt; // show data in grid
             }
         }
         private void button3_Click(object sender, EventArgs e)
