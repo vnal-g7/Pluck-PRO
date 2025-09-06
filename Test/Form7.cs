@@ -28,7 +28,8 @@ namespace Test
         void populate()
         {
             Connection.Open();
-            string query = "select * from Stock";
+            // Select all columns plus a calculated Availability column
+            string query = "SELECT *, (StockIn - StockOut) AS Availability FROM Stock";
             SqlDataAdapter da = new SqlDataAdapter(query, Connection);
             SqlCommandBuilder builder = new SqlCommandBuilder(da);
             var ds = new DataSet();

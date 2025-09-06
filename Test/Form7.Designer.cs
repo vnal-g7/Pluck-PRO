@@ -160,9 +160,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(284, 78);
+            this.dataGridView1.Location = new System.Drawing.Point(226, 90);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(461, 156);
+            this.dataGridView1.Size = new System.Drawing.Size(564, 306);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -171,9 +171,9 @@
             this.button1.BackColor = System.Drawing.Color.DarkGreen;
             this.button1.Font = new System.Drawing.Font("Verdana", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(38, 238);
+            this.button1.Location = new System.Drawing.Point(57, 244);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(62, 32);
+            this.button1.Size = new System.Drawing.Size(92, 37);
             this.button1.TabIndex = 3;
             this.button1.Text = "ADD";
             this.button1.UseVisualStyleBackColor = false;
@@ -184,9 +184,9 @@
             this.button2.BackColor = System.Drawing.Color.DarkGreen;
             this.button2.Font = new System.Drawing.Font("Verdana", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(117, 238);
+            this.button2.Location = new System.Drawing.Point(57, 287);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(62, 32);
+            this.button2.Size = new System.Drawing.Size(92, 40);
             this.button2.TabIndex = 13;
             this.button2.Text = "EDIT";
             this.button2.UseVisualStyleBackColor = false;
@@ -197,9 +197,9 @@
             this.button3.BackColor = System.Drawing.Color.DarkGreen;
             this.button3.Font = new System.Drawing.Font("Verdana", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(195, 238);
+            this.button3.Location = new System.Drawing.Point(57, 333);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(62, 32);
+            this.button3.Size = new System.Drawing.Size(92, 41);
             this.button3.TabIndex = 14;
             this.button3.Text = "DELETE";
             this.button3.UseVisualStyleBackColor = false;
