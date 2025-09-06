@@ -32,29 +32,34 @@ namespace Test
 
         private void LoadOnDutyEmployees()
         {
+            
+        }
+        private void Form10_Load(object sender, EventArgs e)
+        {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string query = @"SELECT A.AttendanceID, W.Name 
-                         FROM Attendance A
-                         INNER JOIN Worker W ON A.WorkerID = W.WorkerID
-                         WHERE A.OffTime IS NULL";
-
+                string query = "SELECT WorkerID, Name FROM Worker";
                 SqlDataAdapter da = new SqlDataAdapter(query, con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
                 comboBox1.DataSource = dt;
-                comboBox1.DisplayMember = "Name";
-                comboBox1.ValueMember = "AttendanceID";
+                comboBox1.DisplayMember = "Name";     // shows employee name
+                comboBox1.ValueMember = "WorkerID";   // stores worker ID
+            }
+
+
+
+
+            {
+                LoadOnDutyEmployees();
+                // Time only
+                dateTimePicker1.Format = DateTimePickerFormat.Time;
+                dateTimePicker1.ShowUpDown = true;
             }
         }
-        private void Form10_Load(object sender, EventArgs e)
-        {
-            LoadOnDutyEmployees();
-            // Time only
-            dateTimePicker1.Format = DateTimePickerFormat.Time;
-            dateTimePicker1.ShowUpDown = true;
-        }
+
+
 
         private void button2_Click(object sender, EventArgs e)
         {

@@ -44,8 +44,8 @@ namespace Test
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form5 form5 = new Form5();
-            form5.Show();
+            Form4 form4 = new Form4();
+            form4.Show();
             this.Hide();
         }
 
@@ -81,6 +81,13 @@ namespace Test
         private void button3_Click(object sender, EventArgs e)
         {
             LoadWorkers();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Form6 form6 = new Form6();
+            form6.Show();
+            this.Hide();
         }
     }
 }
