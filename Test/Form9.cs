@@ -59,24 +59,27 @@ namespace Test
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int workerId = Convert.ToInt32(comboBox1.SelectedValue);
+            int workerID = Convert.ToInt32(comboBox1.SelectedValue);
             DateTime date = dateTimePicker2.Value.Date;
             DateTime onTime = dateTimePicker1.Value;
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO Attendance (WorkerID, Date, OnTime) VALUES (@WorkerID, @Date, @OnTime)";
+                string query = "INSERT INTO Attendance (WorkerID, [Date], OnTime) VALUES (@WorkerID, @Date, @OnTime)";
                 SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@WorkerID", workerId);
+                cmd.Parameters.AddWithValue("@WorkerID", workerID);
                 cmd.Parameters.AddWithValue("@Date", date);
                 cmd.Parameters.AddWithValue("@OnTime", onTime);
 
                 con.Open();
-                cmd.ExecuteNonQuery();
+                int rows = cmd.ExecuteNonQuery();
                 con.Close();
-            }
 
-            MessageBox.Show("Duty On recorded!");
+                if (rows > 0)
+                    MessageBox.Show("Duty On recorded!");
+                else
+                    MessageBox.Show("Insert failed!");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -84,6 +87,11 @@ namespace Test
             Form10 form10 = new Form10();
             form10.Show();
             this.Hide();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

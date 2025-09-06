@@ -36,26 +36,32 @@ namespace Test
         }
         private void Form10_Load(object sender, EventArgs e)
         {
+            dateTimePicker1.Format = DateTimePickerFormat.Time;
+            dateTimePicker1.ShowUpDown = true;
+
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string query = "SELECT WorkerID, Name FROM Worker";
+                string query = @"
+            SELECT A.AttendanceID, W.Name
+            FROM Attendance A
+            INNER JOIN Worker W ON A.WorkerID = W.WorkerID
+            WHERE A.OffTime IS NULL";
+
                 SqlDataAdapter da = new SqlDataAdapter(query, con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                comboBox1.DataSource = dt;
-                comboBox1.DisplayMember = "Name";     // shows employee name
-                comboBox1.ValueMember = "WorkerID";   // stores worker ID
-            }
-
-
-
-
-            {
-                LoadOnDutyEmployees();
-                // Time only
-                dateTimePicker1.Format = DateTimePickerFormat.Time;
-                dateTimePicker1.ShowUpDown = true;
+                if (dt.Rows.Count > 0)
+                {
+                    comboBox1.DataSource = dt;
+                    comboBox1.DisplayMember = "Name";
+                    comboBox1.ValueMember = "AttendanceID";
+                }
+                else
+                {
+                    comboBox1.DataSource = null;
+                    MessageBox.Show("No employees are currently on duty.");
+                }
             }
         }
 
